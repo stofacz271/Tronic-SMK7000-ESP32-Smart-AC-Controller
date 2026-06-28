@@ -53,7 +53,7 @@ void initSensors() {
     ahtOK = aht.begin();
     if (!ahtOK) Serial.println("[WARN] AHT20 nenalezen na 0x38");
 
-    bmpOK = bmp.begin(0x76);
+    bmpOK = bmp.begin(0x77);
     if (!bmpOK) Serial.println("[WARN] BMP280 nenalezen na 0x76");
 
     if (bmpOK) {
