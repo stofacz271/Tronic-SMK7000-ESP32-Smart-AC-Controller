@@ -14,8 +14,8 @@
 #define OLED_ADDR     0x3C
 
 // ── IR kódy (NEC, 32bit: usercode << 16 | datacode) ─
-#define IR_ADDR       0x807F
-#define CMD_POWER     0x9C63
+#define IR_ADDR  0x01FE
+#define CMD_POWER 0x39C6
 #define CMD_SWING     0x926D
 #define CMD_TIMER     0x9F60
 #define CMD_TEMP_DOWN 0x956A
