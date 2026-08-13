@@ -46,7 +46,7 @@ lib_deps =
 ```
 
 **Setup Instructions:**
-1.  Clone this repository: `git clone https://github.com/stofacz271/ESP32_BMP280_and_AHT20_sensor.git`
+1.  Clone this repository: `git clone https://github.com/stofacz271/Tronic-SMK7000-ESP32-Smart-AC-Controller.git`
 2.  Open the project directory in Visual Studio Code with the PlatformIO extension installed.
 3.  PlatformIO will automatically fetch and install all required libraries defined in the `platformio.ini` file.
 4.  Compile and upload the firmware to the ESP32.
