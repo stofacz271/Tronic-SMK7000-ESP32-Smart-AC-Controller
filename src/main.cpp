@@ -24,8 +24,8 @@
 #define CMD_SLEEP     0x9B64
 
 // ── Teplotní práh ────────────────────────────────────
-const float TEMP_ON  = 24.5;
-const float TEMP_OFF = 22.0;
+const float TEMP_ON  = 25.0;
+const float TEMP_OFF = 23.0;
 
 // ── Graf ─────────────────────────────────────────────
 #define GRAPH_POINTS  128
