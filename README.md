@@ -10,8 +10,10 @@ This repository contains firmware for an offline ESP32 microcontroller designed 
     * **Power ON Threshold:** >= 25.0 °C
     * **Power OFF Threshold:** <= 23.0 °C
 
-## ⚠️ Known Limitations (Hardware)
-The Tronic SMK 7000 C2 air conditioner is an RX-only device and uses a single IR toggle code (`0x39C6`) for its power state. The ESP32 tracks the AC state internally. **Do not use the original AC remote control while this node is active**, as it will cause the ESP32's internal state to desynchronize from the actual physical state of the AC unit.
+## ⚠️ Known Limitations (Hardware & Software)
+* **Hardware RX-Only AC:** The Tronic SMK 7000 C2 air conditioner is an RX-only device and uses a single IR toggle code (`0x39C6`) for its power state. The ESP32 tracks the AC state internally. **Do not use the original AC remote control while this node is active**, as it will cause the ESP32's internal state to desynchronize from the actual physical state of the AC unit.
+* **Volatile State Storage:** The internal AC state tracking (`climaON`) is stored only in RAM. In the event of a power outage, brownout, or ESP32 reset, the state defaults to `false`. If the AC is physically running during a reset, the next thermal trigger will send a toggle command and unintentionally turn the AC off.
+* **Blocking Display Initialization:** The firmware currently requires the I2C OLED display to be connected and functional at boot. If the display initialization fails (e.g., due to loose wiring), the ESP32 will halt execution (`while(true)`), preventing the autonomous thermostat and sensor reading logic from running.
 
 ## ⚙️ Hardware Components
 * **Microcontroller:** ESP32 (e.g., WROOM, ESP32-S3, or ESP32-C3)
